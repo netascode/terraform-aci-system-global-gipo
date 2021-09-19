@@ -14,35 +14,21 @@ terraform {
 module "main" {
   source = "../.."
 
-  name        = "ABC"
-  alias       = "ALIAS"
-  description = "DESCR"
+  use_infra_gipo = true
 }
 
-data "aci_rest" "fvTenant" {
-  dn = "uni/tn-ABC"
+data "aci_rest" "fmcastSystemGIPoPol" {
+  dn = "uni/infra/systemgipopol"
 
   depends_on = [module.main]
 }
 
-resource "test_assertions" "fvTenant" {
-  component = "fvTenant"
+resource "test_assertions" "fmcastSystemGIPoPol" {
+  component = "fmcastSystemGIPoPol"
 
-  equal "name" {
-    description = "name"
-    got         = data.aci_rest.fvTenant.content.name
-    want        = "ABC"
-  }
-
-  equal "nameAlias" {
-    description = "nameAlias"
-    got         = data.aci_rest.fvTenant.content.nameAlias
-    want        = "ALIAS"
-  }
-
-  equal "descr" {
-    description = "descr"
-    got         = data.aci_rest.fvTenant.content.descr
-    want        = "DESCR"
+  equal "useConfiguredSystemGIPo" {
+    description = "useConfiguredSystemGIPo"
+    got         = data.aci_rest.fmcastSystemGIPoPol.content.useConfiguredSystemGIPo
+    want        = "enabled"
   }
 }

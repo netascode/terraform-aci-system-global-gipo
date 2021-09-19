@@ -1,9 +1,7 @@
-resource "aci_rest" "fvTenant" {
-  dn         = "uni/tn-${var.name}"
-  class_name = "fvTenant"
+resource "aci_rest" "fmcastSystemGIPoPol" {
+  dn         = "uni/infra/systemgipopol"
+  class_name = "fmcastSystemGIPoPol"
   content = {
-    name      = var.name
-    nameAlias = var.alias
-    descr     = var.description
+    useConfiguredSystemGIPo = var.use_infra_gipo == true ? "enabled" : "disabled"
   }
 }

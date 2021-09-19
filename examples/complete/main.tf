@@ -1,8 +1,6 @@
-module "aci_scaffolding" {
-  source  = "netascode/scaffolding/aci"
+module "aci_system_global_gipo" {
+  source  = "netascode/system-global-gipo/aci"
   version = ">= 0.0.1"
 
-  name        = "ABC"
-  alias       = "ABC-ALIAS"
-  description = "My Description"
+  use_infra_gipo = true
 }
