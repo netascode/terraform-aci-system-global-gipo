@@ -1,4 +1,4 @@
-resource "aci_rest" "fmcastSystemGIPoPol" {
+resource "aci_rest_managed" "fmcastSystemGIPoPol" {
   dn         = "uni/infra/systemgipopol"
   class_name = "fmcastSystemGIPoPol"
   content = {

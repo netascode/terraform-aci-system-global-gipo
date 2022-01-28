@@ -13,11 +13,10 @@ Location in GUI:
 ```hcl
 module "aci_system_global_gipo" {
   source  = "netascode/system-global-gipo/aci"
-  version = ">= 0.0.1"
+  version = ">= 0.1.0"
 
   use_infra_gipo = true
 }
-
 ```
 
 ## Requirements
@@ -25,13 +24,13 @@ module "aci_system_global_gipo" {
 | Name | Version |
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.0.0 |
-| <a name="requirement_aci"></a> [aci](#requirement\_aci) | >= 0.2.0 |
+| <a name="requirement_aci"></a> [aci](#requirement\_aci) | >= 2.0.0 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| <a name="provider_aci"></a> [aci](#provider\_aci) | >= 0.2.0 |
+| <a name="provider_aci"></a> [aci](#provider\_aci) | >= 2.0.0 |
 
 ## Inputs
 
@@ -49,5 +48,5 @@ module "aci_system_global_gipo" {
 
 | Name | Type |
 |------|------|
-| [aci_rest.fmcastSystemGIPoPol](https://registry.terraform.io/providers/netascode/aci/latest/docs/resources/rest) | resource |
+| [aci_rest_managed.fmcastSystemGIPoPol](https://registry.terraform.io/providers/CiscoDevNet/aci/latest/docs/resources/rest_managed) | resource |
 <!-- END_TF_DOCS -->
